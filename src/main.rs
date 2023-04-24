@@ -7,6 +7,11 @@ struct Api;
 impl Api{
 }
 
+#[handler]
+fn hello(Path(name): Path<String>) -> String {
+    format!("hello: {}", name)
+}
+
 #[tokio::main]
 async fn main() -> Result<(), std::io::Error> {
     println!("Hello, world!");
